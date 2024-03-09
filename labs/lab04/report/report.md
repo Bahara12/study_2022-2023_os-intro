@@ -1,119 +1,195 @@
 ---
 ## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+title: "Шаблон отчёта по лабораторной работе 4 "
+subtitle: "Продвинутое использование git"
+author: "Абдуллахи Бахара"
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
-
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
-
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
+}
+
 
 # Цель работы
-
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+- Получение навыков правильной работы с репозиториями git.
 
 # Задание
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+- Выполнить работу для тестового репозитория.
 
-# Теоретическое введение
+- Преобразовать рабочий репозиторий в репозиторий с git-flow и conventional commits.
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+# Выполнение лабораторной работы:
 
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
+## Установка программного обеспечения
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+- Установка git-flow:
+- Linux
+- Fedora
+- Установка из коллекции репозиториев Copr (https://copr.fedorainfracloud.org/coprs/elegos/gitflow/):
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+ # Enable the copr repository
+ dnf copr enable elegos/gitflow
+ # Install gitflow
+ dnf install gitflow
 
-Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
+![](image/1.jpg){#fig:001 width=100%}
 
-# Выполнение лабораторной работы
+![](image/2.jpg){#fig:001 width=100%}
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001]).
+![](image/3.jpg){#fig:001 width=100%}
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+Установка Node.js :
 
-# Выводы
+![](image/4.jpg){#fig:001 width=100%}
 
-Здесь кратко описываются итоги проделанной работы.
+- Чтобы установить apt-get install pnpm, нужно установить apt с помощью этого камнда dnf install apt:
 
-# Список литературы{.unnumbered}
 
-::: {#refs}
-:::
+![](image/5.jpg){#fig:001 width=100%}
+
+![](image/6.jpg){#fig:001 width=100%}
+
+# Настройка Node.js:
+
+- Для работы с Node.js добавим каталог с исполняемыми файлами, устанавливаемыми yarn, в переменную PATH.
+
+![](image/7.jpg){#fig:001 width=100%}
+
+- Запустите:
+- Перелогиньтесь, или выполните:
+
+![](image/8.jpg){#fig:001 width=100%}
+
+# Общепринятые коммиты: 
+- commitizen:
+
+- Данная программа используется для помощи в форматировании коммитов.
+
+![](image/9.jpg){#fig:001 width=100%}
+
+- При этом устанавливается скрипт git-cz, который мы и будем использовать для коммитов.
+
+- standard-changelog:
+
+- Данная программа используется для помощи в создании логов.
+
+![](image/10.jpg){#fig:001 width=100%}
+
+- Практический сценарий использования git:
+
+1) Подключение репозитория к github
+
+- Создайте репозиторий на GitHub. Для примера назовём его git-extended.
+
+![](image/11.jpg){#fig:001 width=100%}
+![](image/12.jpg){#fig:001 width=100%}
+![](image/13.jpg){#fig:001 width=100%}
+![](image/14.jpg){#fig:001 width=100%}
+
+# Делаем первый коммит и выкладываем на github:
+
+- Сначала мы входим в файл git-extended, затем создадим файл README.md, открываем там README.md, потом с помощью nano там напишим README.md после этого начинаем коммитить на github:
+
+![](image/15.jpg){#fig:001 width=100%}
+
+# Конфигурация общепринятых коммитов:
+- Конфигурация для пакетов Node.js
+
+![](image/16.jpg){#fig:001 width=100%}
+
+- Сконфигурим формат коммитов. Для этого добавим в файл package.json команду для формирования коммитов:
+
+![](image/17.jpg){#fig:001 width=100%}
+
+- добавим новые файлы, зафиксируем их и отправим на Gthub:
+
+
+![](image/18.jpg){#fig:001 width=100%}
+
+# Конфигурация git-flow: 
+
+- мы инициализируем git-flow  и устанавливаем префикс для ярлыков v.
+
+![](image/19.jpg){#fig:001 width=100%}
+
+- Проверьте, что Вы на ветке develop:
+- Загрузите весь репозиторий в хранилище:
+
+![](image/20.jpg){#fig:001 width=100%}
+
+
+- Установите внешнюю ветку как вышестоящую для этой ветки:
+
+
+![](image/21.jpg){#fig:001 width=100%}
+
+- Создадим релиз с версией 1.0.0
+
+![](image/22.jpg){#fig:001 width=100%}
+
+- Создадим журнал изменений
+
+![](image/23.jpg){#fig:001 width=100%}
+
+- Добавим журнал изменений в индекс:
+
+![](image/24.jpg){#fig:001 width=100%}
+![](image/25.jpg){#fig:001 width=100%}
+![](image/26.jpg){#fig:001 width=100%}
+
+- Зальём релизную ветку в основную ветку:
+
+![](image/27.jpg){#fig:001 width=100%}
+
+- Отправим данные на github:
+
+![](image/28.jpg){#fig:001 width=100%}
+
+- Создадим релиз на github. Для этого будем использовать утилиты работы с github:
+
+![](image/29.jpg){#fig:001 width=100%}
+
+# Работа с репозиторием git:
+
+-  Разработка новой функциональности:
+
+- Создадим ветку для новой функциональности:
+
+![](image/31.jpg){#fig:001 width=100%}
+
+- следует объединить ветку:
+
+![](image/32.jpg){#fig:001 width=100%}
+
+- Создание релиза git-flow:
+- Создадим релиз с версией 1.2.3:
+
+![](image/33.jpg){#fig:001 width=100%}
+
+- Обновите номер версии в файле package.json.
+
+
+![](image/34.jpg){#fig:001 width=100%}
+
+- Создадим журнал изменений
+
+![](image/35.jpg){#fig:001 width=100%}
+
+- Добавим журнал изменений в индекс
+- Зальём релизную ветку в основную ветку
+
+ ![](image/36.jpg){#fig:001 width=100%}
+ 
+ ![](image/37.jpg){#fig:001 width=100%}
+ 
+ - Отправим данные на github 
+ 
+ - Создадим релиз на github с комментарием из журнала изменений: 
+  
+  ![](image/38.jpg){#fig:001 width=100%}
+  
+
+# Выводы:
+
+- Получение навыков правильной работы с репозиториями git.
+
+
